@@ -1,0 +1,1 @@
+METADRIVE_ENV = False

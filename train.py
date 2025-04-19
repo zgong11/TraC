@@ -1,8 +1,6 @@
 import argparse
 import os
 
-from research.utils.config import Config
-
 
 def try_wandb_setup(path, config):
     wandb_api_key = os.getenv("WANDB_API_KEY")
@@ -44,6 +42,10 @@ if __name__ == "__main__":
     parser.add_argument("--safe_bottom_perc", type=float, default=None)
     args = parser.parse_args()
 
+    import configs.metadrive_env as metaenv
+    metaenv.METADRIVE_ENV = True if "Metadrive" in args.eval_env else False
+
+    from research.utils.config import Config
     config = Config.load(args.config)
     config["seed"] = args.seed
     config["eval_env"] = args.eval_env

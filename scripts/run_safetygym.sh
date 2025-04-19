@@ -23,7 +23,7 @@ if [ $env = "SwimmerVelocity" ] || [ $env = "HopperVelocity" ] || [ $env = "Half
 else
     eval_env=Offline${env}Gymnasium-v0
 fi
-dataset_path=/.dsrl/datasets/Safety${env}Gymnasium-*
+dataset_path=~/.dsrl/datasets/Safety${env}Gymnasium-*
 echo $eval_env
 echo $dataset_path
 for dir in $dataset_path; do

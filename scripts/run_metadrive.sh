@@ -16,7 +16,7 @@ metadrive=(MetaDrive-easydense MetaDrive-easymean MetaDrive-easysparse
 
 # for env in $bulletgym; do
 eval_env=OfflineMetadrive-$env-v0
-dataset_path=/.dsrl/datasets/SafeMetaDrive-$env-v0*
+dataset_path=~/.dsrl/datasets/SafeMetaDrive-$env-v0*
 echo $eval_env
 echo $dataset_path
 for dir in $dataset_path; do

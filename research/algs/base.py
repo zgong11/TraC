@@ -3,12 +3,18 @@ import os
 from abc import ABC, abstractmethod
 from typing import Any, Dict, List, Optional, Set, Type, Union
 
-import gymnasium as gym
+# import gymnasium as gym
 import torch
 
 from research.processors.base import Identity, Processor
 from research.utils import utils
 
+# Metadrive uses gym instead of gymnasium
+import configs.metadrive_env as metaenv
+if metaenv.METADRIVE_ENV:
+    import gym
+else:
+    import gymnasium as gym
 
 class Algorithm(ABC):
     _save_keys: Set[str]

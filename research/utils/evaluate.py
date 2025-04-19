@@ -75,9 +75,11 @@ def eval_policy(
         render_kwargs = dict(mode="rgb_array", width=width, height=height) if save_gif else dict()
         obs, info = env.reset()
 
-        # Metadrive reset gives tuple for obs.
-        if "Metadrive" in env.unwrapped.spec.id:
-            obs = obs[0]
+
+        # # Metadrive reset gives tuple for obs.
+        # if "Metadrive" in env.unwrapped.spec.id:
+        #     obs = obs[0]
+
 
         if save_gif:
             frames.append(env.render(**render_kwargs))

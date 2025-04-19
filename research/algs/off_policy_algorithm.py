@@ -6,7 +6,7 @@ import tempfile
 from abc import abstractmethod
 from typing import Any, Dict, Optional, Union
 
-import gymnasium as gym
+# import gymnasium as gym
 import numpy as np
 import torch
 
@@ -15,6 +15,14 @@ from research.networks.base import ModuleContainer
 from research.utils import utils
 
 from .base import Algorithm
+
+# Metadrive uses gym instead of gymnasium
+import configs.metadrive_env as metaenv
+if metaenv.METADRIVE_ENV:
+    import gym
+else:
+    import gymnasium as gym
+
 
 
 class OffPolicyAlgorithm(Algorithm):

@@ -178,7 +178,7 @@ class ContinuousMLPActor(nn.Module):
         **kwargs,
     ):
         super().__init__()
-        assert isinstance(observation_space, gym.spaces.Box) and len(observation_space.shape) == 1
+        # assert isinstance(observation_space, gym.spaces.Box) and len(observation_space.shape) == 1
 
         self.mlp = MLP(observation_space.shape[0], action_space.shape[0], **kwargs)
         self.ortho_init = ortho_init

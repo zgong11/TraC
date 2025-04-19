@@ -19,7 +19,15 @@ import research.datasets
 from . import schedules, utils
 from .trainer import Trainer
 
-import gymnasium as gym
+# import gymnasium as gym
+# import dsrl
+
+# Metadrive uses gym instead of gymnasium
+import configs.metadrive_env as metaenv
+if metaenv.METADRIVE_ENV:
+    import gym
+else:
+    import gymnasium as gym
 import dsrl
 
 DEFAULT_NETWORK_KEY = "network"

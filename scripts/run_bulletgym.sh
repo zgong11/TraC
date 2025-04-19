@@ -14,7 +14,7 @@ bulletgym=(BallRun CarRun DroneRun AntRun BallCircle CarCircle DroneCircle AntCi
 
 # for env in $bulletgym; do
 eval_env=Offline$env-v0
-dataset_path=/.dsrl/datasets/Safety$env-v0*
+dataset_path=~/.dsrl/datasets/Safety$env-v0*
 echo $eval_env
 echo $dataset_path
 for dir in $dataset_path; do
